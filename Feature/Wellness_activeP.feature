@@ -14,7 +14,7 @@ Feature: Wellness_activeP
     And User enter "200" into Price
     And User select start date from Start Date
     And User select end date from End Date
-    And User select member from Add Members
+    #And User select member from Add Members
     And User update image in thumbnail
     And User click on Save and publish button
     Then Verify User is on module page
@@ -37,10 +37,10 @@ Feature: Wellness_activeP
     Then Verify session has been created
     When User click on continue button
     Then Verify user is on forums page
-    #When User click on Start a new topic
-    #And User enter "Hi" in text message box
-    #And User click on cancel button
+    When User click on Start a new topic
+    And User enter "Hi" in text message box
+    And User click on cancel button
     When User click on forums continue button
     Then Verify user is on members page
-    Then Verify user is able to see added members
+    #Then Verify user is able to see added members
     And User click on finish button

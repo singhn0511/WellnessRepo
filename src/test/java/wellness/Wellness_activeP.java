@@ -116,7 +116,7 @@ public class Wellness_activeP {
     public void user_update_image_in_thumbnail() throws InterruptedException {
 		Thread.sleep(2000);
 		WebElement browse = driver.findElement(By.xpath("//input[@class='form-control uploader-input']"));
-		   browse.sendKeys("C:\\Users\\kaush\\eclipse-workspace\\WellnessWits\\Pics\\Photo.png"); 
+		   browse.sendKeys("C:\\Users\\kaush\\eclipse-workspace\\WellnessRepo\\Pics\\Photo.png"); 
 		   System.out.println("File is Uploaded Successfully");
     }
 
@@ -154,14 +154,14 @@ public class Wellness_activeP {
 	@Then("^Verify User is on module page$")
     public void verify_user_is_on_module_page() {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		   WebElement module = driver.findElement(By.xpath("//span[@class= 'd-block btn-custom-link']"));
+		   WebElement module = driver.findElement(By.xpath("//span[contains(text(),'Add New Module')]"));
 		   module.isDisplayed();
 		   Assert.assertTrue(true);
     }
 	
 	@When("^User click on Add new module$")
     public void user_click_on_add_new_module() {
-		driver.findElement(By.xpath("//span[@class= 'd-block btn-custom-link']")).click();
+		driver.findElement(By.xpath("//span[contains(text(),'Add New Module')]")).click();
     }
 	
 	@And("^User enter \"([^\"]*)\" into module title$")
@@ -211,14 +211,14 @@ public class Wellness_activeP {
 
     @Then("^Verify user is on Sessions page$")
     public void verify_user_is_on_sessions_page() {
-    	WebElement session = driver.findElement(By.xpath("//span[@class= 'd-block btn-custom-link']"));
+    	WebElement session = driver.findElement(By.xpath("//button[contains(text(),'Add New Session')]"));
 		   session.isDisplayed();
 		   Assert.assertTrue(true);
     }
     
     @When("^User click on Add new session$")
     public void user_click_on_add_new_session() {
-    	driver.findElement(By.xpath("//span[@class= 'd-block btn-custom-link']")).click();
+    	driver.findElement(By.xpath("//button[contains(text(),'Add New Session')]")).click();
     }
 
     @And("^User enter \"([^\"]*)\" into session name$")
@@ -246,7 +246,7 @@ public class Wellness_activeP {
     @And("^User select session date$")
     public void user_select_session_date() {
         driver.findElement(By.xpath("//div[@class=' css-6j8wv5-Input']")).click();
-        driver.findElement(By.xpath("//*[text()='2023-02-26']")).click();
+        driver.findElement(By.xpath("//*[text()='02-26-2023']")).click();
         
     }
     
